@@ -1,0 +1,41 @@
+Explanation of the Code:
+
+1. Imports:
+subprocess: To run shell commands (alignments and SAMtools).
+time: To measure execution times.
+pandas: For storing and handling results.
+matplotlib.pyplot and seaborn: For creating visualizations.
+
+2. Functions:
+run_alignment: Runs the alignment command and measures execution time.
+get_alignment_stats: Extracts alignment statistics using SAMtools.
+extract_aligned_reads: Parses the SAMtools output to get the number of aligned reads.
+
+3. Running Alignments:
+Calls bwa_align.sh and novo_align.sh scripts for BWA and NoVoAlign alignments, respectively.
+Measures execution time for each.
+
+4. Performance Metrics:
+Calculates accuracy and error rates based on the number of aligned reads.
+Memory usage values are placeholders (adjust based on actual measurements).
+
+5. Visualization:
+Plots for execution time, memory usage, accuracy, and error rates using Seaborn.
+Saves the results to a CSV file for future reference.
+
+
+Dependencies:
+Make sure the following are installed before running the script:
+
+sudo apt update
+sudo apt install -y bwa novocraft samtools python3 python3-pip
+pip3 install pandas matplotlib seaborn
+
+Running the Script:
+Ensure bwa_align.sh and novo_align.sh scripts are executable:
+
+chmod +x bwa_align.sh novo_align.sh
+
+
+Run the Python script:
+python3 alignment_comparison.py
